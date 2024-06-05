@@ -90,7 +90,7 @@ export default function Home() {
           </Link>
         </div>
       </CardHome>
-      <div className="mb-10"></div>
+      <div className="h-12"></div>
 
     </Layout>
   );

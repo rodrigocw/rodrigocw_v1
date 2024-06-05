@@ -9,6 +9,7 @@ import { useAppContext } from "@/app/context";
 import { dataCV } from "@/app/components/data/cv";
 import CardCV from "@/app/components/templates/CardCV";
 import CardCVsm from "@/app/components/templates/CardCVsm";
+import ContatoCV from "./contatoCV";
 
 export default function CurriculumVitae() {
 
@@ -34,9 +35,12 @@ export default function CurriculumVitae() {
 
                 {isSmall && (
                     <div className={`flex flex-col`}>
-                        <div className={`flex bg-gradient-to-b from-blue-800 via-purple-700 to-purple-950`}>
-                            <div className="flex p-1">
-                                <ImageSvg src="/images/Rodrigo.png" width={80} height={80} alt="RodrigoCW" />
+
+                        <div className="flex justify-center items-center bg-gradient-to-b from-blue-800 via-purple-700 to-purple-950">
+                            <div className="flex justify-center items-center h-20">
+                                <div className="p-1 w-20 h-20 flex justify-center items-center">
+                                    <ImageSvg src="/images/Rodrigo.png" width={80} height={80} alt="RodrigoCW" />
+                                </div>
                             </div>
                             <div className="flex flex-col w-full justify-center items-center">
                                 <h1 className="text-[16px]">Rodrigo Carlos Wansovicz</h1>
@@ -45,62 +49,7 @@ export default function CurriculumVitae() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col ml-2 mr-1">
-                            <h1 className={`text-[${h1Textsm}px] mt-2`}>Contato</h1>
-                            <div className={`flex items-center text-[${h2Textsm}px] mt-2 ml-2`}>
-                                {IconEnvelopeSolid("w-4 h-4")}
-                                <span className="ml-2">rodrigocw@gmail.com</span>
-                            </div>
-                            <div className={`flex items-center text-[${h2Textsm}px] mt-2 ml-2`}>
-                                {IconPhoneSolid("w-4 h-4")}
-                                <span className="ml-2">(42) 93300-4638</span>
-                            </div>
-                            <div className={`flex items-center text-[${h2Textsm}px] mt-2 ml-2`}>
-                                {IconLinkedin("w-4 h-4")}
-                                <Link href={"https://linkedin.com/in/rodrigocw/"} target="_blank">
-                                    <span className="ml-2">linkedin.com/in/rodrigocw</span>
-                                </Link>
-                            </div>
-                            <div className={`flex items-center text-[${h2Textsm}px] mt-2 ml-2`}>
-                                {IconGithub("w-4 h-4")}
-                                <Link href={"https://github.com/rodrigocw/"} target="_blank">
-                                    <span className="ml-2">github.com/rodrigocw</span>
-                                </Link>
-                            </div>
-                            <h1 className={`text-[${h1Textsm}px] mt-2`}>Formação acadêmica</h1>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>MBA</h2>
-                            <h2 className={`text-[${h2Textsm}px] ml-4`}>Business Intelligence</h2>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>Universidade Positivo</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>2019 - 2020</h3>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Especialização</h2>
-                            <h2 className={`text-[${h2Textsm}px] ml-4`}>Administração de Banco de Dados</h2>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>Universidade Estadual de Ponta Grossa</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>2001</h3>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Graduação</h2>
-                            <h2 className={`text-[${h2Textsm}px] ml-4`}>Bacharelado em Informatica</h2>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>Universidade Estadual de Ponta Grossa</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>1989 - 1993</h3>
-                            <h1 className={`text-[${h1Textsm}px] mt-2`}>Competências</h1>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Resolução de problemas complexos buscando codificação simples</h2>
-                            <h2 className={`text-[${h2Textsm}px] ml-2`}>Uso de orientação ao objeto</h2>
-                            <h2 className={`text-[${h2Textsm}px] ml-2`}>Resiliência</h2>
-                            <h2 className={`text-[${h2Textsm}px] ml-2`}>Trabalho em equipe</h2>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Back End</h2>
-                            <h3 className={`text-[${h3Textsm}px] ml-4`}>Windows, Linux (Alpine, Arch, Open SUSE, Ubuntu), Node.js</h3>
-                            <h3 className={`text-[${h3Textsm}px] mt-1 ml-4`}>Banco de Dados</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-6`}>Oracle, SQL Server, Interbase, Firebase</h3>
-                            <h3 className={`text-[${h3Textsm}px] mt-1 ml-4`}>Linguagens</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-6`}>PL/SQL, Angular</h3>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Front End</h2>
-                            <h3 className={`text-[${h3Textsm}px] mt-1 ml-4`}>Linguagens</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-6`}>Angular, Next.js, React, Typescript, Delphi, Java, Rust, HTML, CSS</h3>
-                            <h3 className={`text-[${h3Textsm}px] mt-1 ml-4`}>Report</h3>
-                            <h3 className={`text-[${h3Textsm}px] ml-6`}>JasperReports</h3>
-                            <h1 className={`text-[${h1Textsm}px] mt-2`}>Idiomas</h1>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Inglês Técnico</h2>
-                            <h1 className={`text-[${h1Textsm}px] mt-2`}>Hobbies</h1>
-                            <h2 className={`text-[${h2Textsm}px] mt-1 ml-2`}>Aquarista, Audiófilo</h2>
-                        </div>
+                        <ContatoCV />
 
                         <h1 className="text-[16px] mt-2 ml-2">Resumo</h1>
                         <p className="text-[10px] ml-2 mr-2">
@@ -129,9 +78,11 @@ export default function CurriculumVitae() {
 
                         <h1 className={`text-[${h1Textsm}px] mt-2 ml-2`}>Disclamer</h1>
 
-                        <p className="text-[10px] ml-2 mr-2 mt-1 mb-10">
+                        <p className="text-[10px] ml-2 mr-2 mt-1">
                             Se você chegou até aqui Parabéns por ter lido toda a história da minha vida profissional. No dia de hoje 15/05/2024 são 33 anos (seria um presságio sobre os anos de vida do nosso Senhor Jesus?) vivendo e respirando desenvolvimento de sistemas, uma vida inteira desde os primórdios do MS DOS até a revolução da IA na atualidade. Sempre que preciso formatar e reler meu currículo, como foi este caso para o meu novo site, faço uma retrospectiva pela minha vida pessoal e profissional. Nossa sem dúvida, como diria o Roberto, foram Grandes Emoções. Muito trabalho, muito aprendizado, muitas horas de debug em tantos sistemas e tantas tecnologias diversas. Mas sempre fica a certeza, a satisfação em se fazer o que se gosta e a recompensa em estar ajudando as pessoas a realizar seu trabalho com o melhor do meu trabalho.
                         </p>
+
+                        <div className="h-12"></div>
 
                     </div>
                 )}
@@ -143,62 +94,9 @@ export default function CurriculumVitae() {
                             <div className="flex justify-center items-center mt-10">
                                 <ImageSvg src="/images/Rodrigo.png" width={150} height={150} alt="RodrigoCW" />
                             </div>
-                            <div className="flex flex-col ml-2 mr-8">
-                                <h1 className={`text-[${h1Text}px] mt-4`}>Contato</h1>
-                                <div className={`flex items-center text-[${h2Text}px] mt-2 ml-2`}>
-                                    {IconEnvelopeSolid()}
-                                    <span className="ml-2">rodrigocw@gmail.com</span>
-                                </div>
-                                <div className={`flex items-center text-[${h2Text}px] mt-4 ml-2`}>
-                                    {IconPhoneSolid()}
-                                    <span className="ml-2">(42) 93300-4638</span>
-                                </div>
-                                <div className={`flex items-center text-[${h2Text}px] mt-4 ml-2`}>
-                                    {IconLinkedin()}
-                                    <Link href={"https://linkedin.com/in/rodrigocw/"} target="_blank">
-                                        <span className="ml-2">linkedin.com/in/rodrigocw</span>
-                                    </Link>
-                                </div>
-                                <div className={`flex items-center text-[${h2Text}px] mt-4 ml-2`}>
-                                    {IconGithub()}
-                                    <Link href={"https://github.com/rodrigocw/"} target="_blank">
-                                        <span className="ml-2">github.com/rodrigocw</span>
-                                    </Link>
-                                </div>
-                                <h1 className={`text-[${h1Text}px] mt-4`}>Formação acadêmica</h1>
-                                <h2 className={`text-[${h2Text}px] mt-2 ml-2`}>MBA</h2>
-                                <h2 className={`text-[${h2Text}px] ml-2`}>Business Intelligence</h2>
-                                <h3 className={`text-[${h3Text}px] ml-2`}>Universidade Positivo</h3>
-                                <h3 className={`text-[${h3Text}px] ml-2`}>2019 - 2020</h3>
-                                <h2 className={`text-[${h2Text}px] mt-2 ml-2`}>Especialização</h2>
-                                <h2 className={`text-[${h2Text}px] ml-2`}>Administração de Banco de Dados</h2>
-                                <h3 className={`text-[${h3Text}px] ml-2`}>Universidade Estadual de Ponta Grossa</h3>
-                                <h3 className={`text-[${h3Text}px] ml-2`}>2001</h3>
-                                <h2 className={`text-[${h2Text}px] mt-2 ml-2`}>Graduação</h2>
-                                <h2 className={`text-[${h2Text}px] ml-2`}>Bacharelado em Informatica</h2>
-                                <h3 className={`text-[${h3Text}px] ml-2`}>Universidade Estadual de Ponta Grossa</h3>
-                                <h3 className={`text-[${h3Text}px] ml-2`}>1989 - 1993</h3>
-                                <h1 className={`text-[${h1Text}px] mt-4`}>Competências</h1>
-                                <h2 className={`text-[${h2Text}px] mt-2 ml-2`}>Resolução de problemas complexos buscando codificação simples</h2>
-                                <h2 className={`text-[${h2Text}px] ml-2`}>Uso de orientação ao objeto</h2>
-                                <h2 className={`text-[${h2Text}px] ml-2`}>Resiliência</h2>
-                                <h2 className={`text-[${h2Text}px] ml-2`}>Trabalho em equipe</h2>
-                                <h2 className={`text-[${h2Text}px] mt-1 ml-2`}>Back End</h2>
-                                <h3 className={`text-[${h3Text}px] ml-4`}>Windows, Linux (Alpine, Arch, Open SUSE, Ubuntu), Node.js</h3>
-                                <h3 className={`text-[${h3Text}px] mt-1 ml-4`}>Banco de Dados</h3>
-                                <h3 className={`text-[${h3Text}px] ml-6`}>Oracle, SQL Server, Interbase, Firebase</h3>
-                                <h3 className={`text-[${h3Text}px] mt-1 ml-4`}>Linguagens</h3>
-                                <h3 className={`text-[${h3Text}px] ml-6`}>PL/SQL, Angular</h3>
-                                <h2 className={`text-[${h2Text}px] mt-1 ml-2`}>Front End</h2>
-                                <h3 className={`text-[${h3Text}px] mt-1 ml-4`}>Linguagens</h3>
-                                <h3 className={`text-[${h3Text}px] ml-6`}>Angular, Next.js, React, Typescript, Delphi, Java, Rust, HTML, CSS</h3>
-                                <h3 className={`text-[${h3Text}px] mt-1 ml-4`}>Report</h3>
-                                <h3 className={`text-[${h3Text}px] ml-6`}>JasperReports</h3>
-                                <h1 className={`text-[${h1Text}px] mt-4`}>Idiomas</h1>
-                                <h2 className={`text-[${h2Text}px] mt-2 ml-2`}>Inglês Técnico</h2>
-                                <h1 className={`text-[${h1Text}px] mt-4`}>Hobbies</h1>
-                                <h2 className={`text-[${h2Text}px] mt-2 ml-2`}>Aquarista, Audiófilo</h2>
-                            </div>
+
+                            <ContatoCV />
+
                         </div>
                         <div className={`flex`}>
                             <div className={`flex flex-col mt-2 mb-2 ml-2 mr-2`}>
@@ -234,9 +132,11 @@ export default function CurriculumVitae() {
 
                                 <h1 className={`text-[${h1Text}px] mt-4`}>Disclamer</h1>
 
-                                <p className="text-[12px] mt-2 mb-10">
+                                <p className="text-[12px] mt-2">
                                     Se você chegou até aqui Parabéns por ter lido toda a história da minha vida profissional. No dia de hoje 15/05/2024 são 33 anos (seria um presságio sobre os anos de vida do nosso Senhor Jesus?) vivendo e respirando desenvolvimento de sistemas, uma vida inteira desde os primórdios do MS DOS até a revolução da IA na atualidade. Sempre que preciso formatar e reler meu currículo, como foi este caso para o meu novo site, faço uma retrospectiva pela minha vida pessoal e profissional. Nossa sem dúvida, como diria o Roberto, foram Grandes Emoções. Muito trabalho, muito aprendizado, muitas horas de debug em tantos sistemas e tantas tecnologias diversas. Mas sempre fica a certeza, a satisfação em se fazer o que se gosta e a recompensa em estar ajudando as pessoas a realizar seu trabalho com o melhor do meu trabalho.
                                 </p>
+
+                                <div className="h-12"></div>
 
                             </div>
                         </div>

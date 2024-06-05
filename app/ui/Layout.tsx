@@ -16,26 +16,34 @@ export default function Layout({
     const isDark = persist.isDark
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen ">
 
+            {/*<News />*/}
             <header className={`fixed top-0 w-full ${isDark ? 'bg-black' : 'bg-white'}`}>
                 <Cabecalho />
             </header>
 
-            <div className={`flex pt-16 overflow-hidden ${isSmall ? "flex-col" : ""}`}>
-                <aside className="overflow-y-auto mb-2">
+            <div className={`flex pt-16 overflow-hidden
+                ${isSmall ? "flex-col" : ""}`}>
+
+                <aside className="mb-2">
                     <Menu />
                 </aside>
-                <main className="flex-1 last:mr-2 overflow-y-auto">
-                    {children}
-                </main>
-                <div className="hidden sm:block xl:w-1/8 lg:w-1/6">
-                    {/* Conteúdo da div direita */}
+
+                <div className="flex overflow-y-auto">
+
+                    <main className="flex-1 last:mr-2">
+                        {children}
+                    </main>
+
+                    <div className="hidden sm:block xl:w-1/8 lg:w-1/6"></div>
+
                 </div>
+
             </div>
 
             <footer className={`fixed bottom-0 w-full ${isDark ? 'bg-black' : 'bg-white'}`}>
-                <Rodape />
+                <Rodape />    
             </footer>
 
         </div>
