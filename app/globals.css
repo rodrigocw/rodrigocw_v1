@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+[data-theme="dark"] {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+[data-theme="light"] {
+  --foreground-rgb: 0, 0, 0; /* Preta */
+  --background-start-rgb: 255, 255, 255; /* Branca */
+  --background-end-rgb: 255, 255, 255; /* Branca */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+body[data-theme='light'] {
+  background-color: white;
+  color: black;
+}
+
+header[data-theme='light'] {
+  background-color: white;
+}
+
+footer[data-theme='light'] {
+  background-color: white;
+}
+
+body[data-theme='dark'] {
+  background-color: black;
+  color: white;
+}
+
+header[data-theme='dark'] {
+  background-color: black;
+}
+
+footer[data-theme='dark'] {
+  background-color: black;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
