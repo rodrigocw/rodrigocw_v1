@@ -1,4 +1,5 @@
 import { useAppContext } from "../context";
+import useWindowWidth from "../useWindowWidth";
 import Cabecalho from "./Cabecalho";
 import Menu from "./Menu";
 import Rodape from "./Rodape";
@@ -12,8 +13,10 @@ export default function Layout({
     const { persist, setThemeColor, setOpenMenu } = useAppContext()
     const themeColor = persist.themeColor
     const openMenu = persist.openMenu
-    const isSmall = persist.isSmall
     const isDark = persist.isDark
+
+    const windowWidth = useWindowWidth()
+    const isSmall = windowWidth < 768
 
     return (
         <div className="flex flex-col h-screen ">

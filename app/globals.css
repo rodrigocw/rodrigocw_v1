@@ -16,52 +16,38 @@
   }
 }
 
-[data-theme="dark"] {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-}
-
-[data-theme="light"] {
+/* Estilo para o tema claro */
+html[data-theme="light"] {
   --foreground-rgb: 0, 0, 0; /* Preta */
   --background-start-rgb: 255, 255, 255; /* Branca */
   --background-end-rgb: 255, 255, 255; /* Branca */
 }
 
+/* Estilo para o tema escuro */
+html[data-theme="dark"] {
+  --foreground-rgb: 255, 255, 255; /* Branca */
+  --background-start-rgb: 0, 0, 0; /* Preta */
+  --background-end-rgb: 0, 0, 0; /* Preta */
+}
+
+/* Aplique os estilos com base no data-theme no html */
 body {
   color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-start-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
 }
 
-body[data-theme='light'] {
-  background-color: white;
-  color: black;
+/* Estilos para o cabeçalho e rodapé */
+header {
+  background-color: rgb(var(--background-start-rgb));
 }
 
-header[data-theme='light'] {
-  background-color: white;
-}
-
-footer[data-theme='light'] {
-  background-color: white;
-}
-
-body[data-theme='dark'] {
-  background-color: black;
-  color: white;
-}
-
-header[data-theme='dark'] {
-  background-color: black;
-}
-
-footer[data-theme='dark'] {
-  background-color: black;
+footer {
+  background-color: rgb(var(--background-start-rgb));
 }
 
 @layer utilities {

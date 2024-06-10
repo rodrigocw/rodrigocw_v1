@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IconLinkedin } from "@/app/components/icons";
 import ImageSvg from "@/app/components/templates/ImageSvg";
 import { useAppContext } from "@/app/context";
+import useWindowWidth from "@/app/useWindowWidth";
 
 
 export default function Articles() {
@@ -13,10 +14,12 @@ export default function Articles() {
   const { persist, setThemeColor, setOpenMenu } = useAppContext()
   const themeColor = persist.themeColor
   const openMenu = persist.openMenu
-  const isSmall = persist.isSmall
   const isDark = persist.isDark
 
   const urlRaspberry = "https://www.linkedin.com/pulse/instala%25C3%25A7%25C3%25A3o-do-alpine-linux-raspberry-pi-4-como-home-lab-wansovicz/?trackingId=HnXtZrm5QxK%2B8uST2MtQMg%3D%3D"
+
+  const windowWidth = useWindowWidth()
+  const isSmall = windowWidth < 768
 
   return (
     <Layout>

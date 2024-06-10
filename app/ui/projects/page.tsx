@@ -6,14 +6,17 @@ import ImageSvg from "@/app/components/templates/ImageSvg";
 import { IconBook } from "@/app/components/icons";
 import Link from "next/link";
 import { useAppContext } from "@/app/context";
+import useWindowWidth from "@/app/useWindowWidth";
 
 export default function Projects() {
 
     const { persist, setThemeColor, setOpenMenu } = useAppContext()
     const themeColor = persist.themeColor
     const openMenu = persist.openMenu
-    const isSmall = persist.isSmall
     const isDark = persist.isDark
+
+    const windowWidth = useWindowWidth()
+    const isSmall = windowWidth < 768
 
     const urlLivro = "https://desvendando-o-rust.vercel.app"
     return (

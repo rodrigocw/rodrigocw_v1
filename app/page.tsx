@@ -10,6 +10,7 @@ import { IconCV, IconBook } from "./components/icons";
 import Link from "next/link";
 import { useAppContext } from "./context";
 import { IconLinkedin } from "@/app/components/icons";
+import useWindowWidth from "./useWindowWidth";
 
 export default function Home() {
 
@@ -17,11 +18,13 @@ export default function Home() {
   const themeColor = persist.themeColor
   const openMenu = persist.openMenu
   const isDark = persist.isDark
-  const isSmall = persist.isSmall
 
   const router = useRouter()
   const urlLivro = "https://desvendando-o-rust.vercel.app/"
   const urlRaspberry = "https://www.linkedin.com/pulse/instala%25C3%25A7%25C3%25A3o-do-alpine-linux-raspberry-pi-4-como-home-lab-wansovicz/?trackingId=HnXtZrm5QxK%2B8uST2MtQMg%3D%3D"
+
+  const windowWidth = useWindowWidth()
+  const isSmall = windowWidth < 768
 
   return (
     <Layout>

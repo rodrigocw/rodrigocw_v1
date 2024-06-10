@@ -10,14 +10,17 @@ import { dataCV } from "@/app/components/data/cv";
 import CardCV from "@/app/components/templates/CardCV";
 import CardCVsm from "@/app/components/templates/CardCVsm";
 import ContatoCV from "./contatoCV";
+import useWindowWidth from "@/app/useWindowWidth";
 
 export default function CurriculumVitae() {
 
     const { persist, setThemeColor, setOpenMenu } = useAppContext()
     const themeColor = persist.themeColor
     const openMenu = persist.openMenu
-    const isSmall = persist.isSmall
     const isDark = persist.isDark
+
+    const windowWidth = useWindowWidth()
+    const isSmall = windowWidth < 768
 
     const h1Text = 16
     const h2Text = 14

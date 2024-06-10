@@ -1,13 +1,16 @@
 import { IconEnvelopeSolid, IconGithub, IconLinkedin, IconPhoneSolid } from "@/app/components/icons"
 import { useAppContext } from "@/app/context"
+import useWindowWidth from "@/app/useWindowWidth"
 import Link from "next/link"
 
 export default function ContatoCV() {
     const { persist, setThemeColor, setOpenMenu } = useAppContext()
     const themeColor = persist.themeColor
     const openMenu = persist.openMenu
-    const isSmall = persist.isSmall
     const isDark = persist.isDark
+
+    const windowWidth = useWindowWidth()
+    const isSmall = windowWidth < 768
 
     const h1Text = 16
     const h2Text = 14

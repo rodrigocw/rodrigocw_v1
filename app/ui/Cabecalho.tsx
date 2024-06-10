@@ -6,6 +6,7 @@ import ImageSvg from "../components/templates/ImageSvg";
 import { fontYellow } from "../ui/fonts"
 import classNames from "classnames";
 import { useAppContext } from "../context";
+import useWindowWidth from "../useWindowWidth";
 
 
 export default function Cabecalho() {
@@ -13,7 +14,9 @@ export default function Cabecalho() {
     const { persist, setThemeColor, setOpenMenu } = useAppContext()
     const themeColor = persist.themeColor
     const isDark = persist.isDark
-    const isSmall = persist.isSmall
+
+    const windowWidth = useWindowWidth()
+    const isSmall = windowWidth < 768
 
     function getThemeClass(selecionado: boolean): string {
         const themeClass = (themeColor === "light"
@@ -28,6 +31,12 @@ export default function Cabecalho() {
             : selecionado ? 'stroke-black' : 'stroke-gray-700 hover:stroke-black'
     }
 
+    function getThemeOpen(): string {
+        return isDark
+            ? "hover:bg-gray-700"
+            : "hover:bg-gray-200"
+    }
+
     const solSelecionado = themeColor === 'light'
     const deskSelecionado = themeColor === 'system'
     const luaSelecionado = themeColor === 'dark'
@@ -37,12 +46,12 @@ export default function Cabecalho() {
         <div className={`
             flex h-16 items-center
         `}>
-            <div className="w-1"></div>
+            <div className="w-3"></div>
 
             {!isSmall && (
-                <div className={`
-                    flex items-center justify-center cursor-pointer rounded-full
-                    ml-2 h-10 w-10`}
+                <div className={classNames(
+                    "flex items-center justify-center cursor-pointer rounded-full h-10 w-10",
+                    getThemeOpen())}
                     onClick={setOpenMenu}>
                     {IconBars3}
                 </div>

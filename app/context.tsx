@@ -6,7 +6,6 @@ import { ReactNode } from 'react';
 interface PersistData {
     themeColor: string
     openMenu: boolean
-    isSmall: boolean
     isDark: boolean
 }
 
@@ -32,7 +31,6 @@ const getLocalStoragePersist = () => {
     const persist: PersistData = {
         themeColor: themeColor,
         openMenu: openMenu,
-        isSmall: isSmall,
         isDark: themeColor !== "system" ? (themeColor === "dark" ? true : false) : window.matchMedia('(prefers-color-scheme: dark)').matches
     }
     return persist
@@ -45,7 +43,6 @@ const getPersist = () => {
         const persist: PersistData = {
             themeColor: 'system',
             openMenu: !isSmall,
-            isSmall,
             isDark: window.matchMedia('(prefers-color-scheme: dark)').matches
         };
         const dataToStore = {
